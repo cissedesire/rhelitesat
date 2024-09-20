@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../drive-download-20240730T084905Z-001/style.css" />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+    />
+    <title>Document</title>
+    <style>
+        /* Ajoutez ceci pour définir la hauteur du conteneur de la carte */
+        #map {
+            height: 400px; /* Ajustez la hauteur selon vos besoins */
+            width: 100%; /* Ajustez la largeur selon vos besoins */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contact">
+            <h1>Nous contacter</h1>
+        </div>
+        <div id="map"></div>
+    </div>
+    <center><div class="info">
+        <ul class="list-unstyled d-flex justify-content-center mt-4">
+            <a style="background: #212121;padding: 10px 18px;text-decoration: none;color: #fff;display: inline-block;margin: 30px 0;border-radius: 5px;"
+            href="../pages/accueil.php">Retour</a>
+        </ul>
+    </div></center>
+    
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script>
+      // Importez la bibliothèque Leaflet
+      const L = window.L;
+
+      // Initialisez la carte
+      const map = L.map("map").setView(
+        [5.370092935491439, -3.961215425168258],
+        15
+      );
+
+      // Ajoutez une couche de carte (par exemple, OpenStreetMap)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Ajoutez un marqueur
+      L.marker([5.370092935491439, -3.961215425168258])
+        .addTo(map)
+        .bindPopup("Pharmacie Du Bonheur");
+    </script>
+</body>
+</html>
